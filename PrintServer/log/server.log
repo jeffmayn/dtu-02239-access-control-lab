@@ -1,0 +1,44 @@
+29-10-2021 21:20:13 -- [server]: starting..
+29-10-2021 21:20:17 -- [jeff]: logged in succesfully
+29-10-2021 21:20:18 -- [jeff]: Queue for printer: office
+29-10-2021 21:20:18 -- [Server]: Moving job[3] to top.
+29-10-2021 21:20:18 -- [jeff]: Queue for printer: office
+29-10-2021 21:20:18 -- [jeff]: Queue for printer: home
+29-10-2021 21:20:18 -- [server]: restarting..
+29-10-2021 21:20:18 -- [server]: stopping..
+29-10-2021 21:20:18 -- [server]: starting..
+29-10-2021 21:20:18 -- [jeff]: Queue for printer: office
+29-10-2021 21:20:18 -- [jeff]: reading server config
+29-10-2021 21:20:18 -- [jeff]: sets lockout time to: 20
+29-10-2021 21:20:18 -- [jeff]: reading server config
+29-10-2021 21:51:55 -- [server]: starting..
+29-10-2021 21:52:42 -- [jeff]: logged in succesfully
+29-10-2021 22:36:52 -- [server]: starting..
+29-10-2021 22:37:05 -- [jeff]: Too many unsuccesful login attemps. Lock applied
+29-10-2021 22:37:22 -- [efasd]: Too many unsuccesful login attemps. Lock applied
+29-10-2021 22:48:27 -- [server]: starting..
+29-10-2021 22:48:31 -- [jeff]: logged in succesfully
+29-10-2021 22:48:32 -- [jeff]: Queue for printer: office
+29-10-2021 22:48:32 -- [Server]: Moving job[3] to top.
+29-10-2021 22:48:32 -- [jeff]: Queue for printer: office
+29-10-2021 22:48:32 -- [jeff]: Queue for printer: home
+29-10-2021 22:48:32 -- [server]: restarting..
+29-10-2021 22:48:32 -- [server]: stopping..
+29-10-2021 22:48:32 -- [server]: starting..
+29-10-2021 22:48:32 -- [jeff]: Queue for printer: office
+29-10-2021 22:48:32 -- [jeff]: reading server config
+29-10-2021 22:48:32 -- [jeff]: sets lockout time to: 20
+29-10-2021 22:48:32 -- [jeff]: reading server config
+03-11-2021 14:03:57 -- [server]: starting..
+03-11-2021 14:04:03 -- [jeff]: logged in succesfully
+03-11-2021 14:04:04 -- [jeff]: Queue for printer: office
+03-11-2021 14:04:04 -- [Server]: Moving job[3] to top.
+03-11-2021 14:04:04 -- [jeff]: Queue for printer: office
+03-11-2021 14:04:04 -- [jeff]: Queue for printer: home
+03-11-2021 14:04:04 -- [server]: restarting..
+03-11-2021 14:04:04 -- [server]: stopping..
+03-11-2021 14:04:04 -- [server]: starting..
+03-11-2021 14:04:04 -- [jeff]: Queue for printer: office
+03-11-2021 14:04:04 -- [jeff]: reading server config
+03-11-2021 14:04:04 -- [jeff]: sets lockout time to: 20
+03-11-2021 14:04:04 -- [jeff]: reading server config
