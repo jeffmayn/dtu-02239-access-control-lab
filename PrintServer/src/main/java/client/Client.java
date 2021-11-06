@@ -3,7 +3,6 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -19,11 +18,9 @@ public class Client {
 		try {
 			 service = (PrinterService) Naming.lookup("rmi://localhost:" + portnumber + "/printer");
 		} 
-		catch (MalformedURLException e) { e.printStackTrace(); } 
-		catch (RemoteException e) 		{ e.printStackTrace(); } 
-		catch (NotBoundException e) 	{ e.printStackTrace(); }
+		catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace(); }
 
-				// boot up server: creates database & printers
+		// boot up server: creates database & printers
 				service.start(); 
 				
 				// login & authenticate user
@@ -68,16 +65,11 @@ public class Client {
 					}		
 				}
 	}
-	
-	public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-		
-	}
 
-	
 	public boolean login(PrinterService service) throws RemoteException {
 		String auth = "";
 		
-		while (!auth.equals("Login succesful!")) {	
+		while (!auth.equals("Login successful!")) {
 		    System.out.println("Enter your username");
 			String userName = input.nextLine();  
 			

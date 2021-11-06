@@ -16,15 +16,17 @@ public class UI {
 			//System.out.println("i: " + i);
 			//printOptions();
 			//String n = input.next();
-			
-			if(i.equals("print")) { printLogic(input, service); } 
-			  else if (i.equals("1")) { printOptions(); } 
-			  else if (i.equals("queue")) { queue(service, input); }
-			  else if (i.equals("top")) { topQueueLogic(service, input); }
-			  else if (i.equals("start")) { start(service); }
-			  else if (i.equals("stop")) { stop(service); }
-			  else if (i.equals("restart")) { restart(service); }
-			  else if (i.equals("status")) { status(service, input); }
+
+			switch (i) {
+				case "print" -> printLogic(input, service);
+				case "1" -> printOptions();
+				case "queue" -> queue(service, input);
+				case "top" -> topQueueLogic(service, input);
+				case "start" -> start(service);
+				case "stop" -> stop(service);
+				case "restart" -> restart(service);
+				case "status" -> status(service, input);
+			}
 		}
 	}
 	
@@ -107,7 +109,7 @@ public class UI {
 		
 		try {
 			System.out.println(service.queue(printerName));
-			System.out.println("");
+			System.out.print("\n");
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
@@ -128,7 +130,7 @@ public class UI {
 		System.out.println("Write job#");
 
 		int job = Integer.parseInt(input.nextLine());
-		System.out.println(printerName + ": job# " + Integer.toString(job) + " sent to top of queue!\n\n");
+		System.out.println(printerName + ": job# " + job + " sent to top of queue!\n\n");
 	
 		service.topQueue(printerName, job);
 		try {
@@ -166,11 +168,7 @@ public class UI {
 	public boolean initialOptions(Scanner input) {
 		 System.out.println("Press (1) for automated tests\nPress (2) for manuel");	 
 		 String choice = input.nextLine();
-		 if(choice.equals("1")) {
-			 return true;
-		 } else {
-			 return false;
-		 }
+		 return choice.equals("1");
 	}
 	
 	
@@ -187,9 +185,5 @@ public class UI {
 	    System.out.println("' exit          │ exits application                             '");
 	    System.out.println("+---------------------------------------------------------------+");
 	}
-
-
-
-	
 
 }

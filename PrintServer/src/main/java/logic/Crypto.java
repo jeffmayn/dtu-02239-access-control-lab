@@ -1,6 +1,5 @@
 package logic;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,7 +16,7 @@ public class Crypto {
 			SecureRandom random = new SecureRandom();
 			random.nextBytes(bSalt);	
 		} else {
-			bSalt = salt.getBytes(Charset.forName("UTF-8"));
+			bSalt = salt.getBytes(StandardCharsets.UTF_8);
 		}
 		// add salt to SHA-512
 		try {
@@ -27,17 +26,12 @@ public class Crypto {
 			e.printStackTrace();
 		}
 		// add password to SHA-512
-		byte[] hashedPassword = md.digest(password.getBytes(Charset.forName("UTF-8")));
-		String hash = new String(hashedPassword,Charset.forName("UTF-8"));
-
-		return hash;
+		assert md != null;
+		byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+		return new String(hashedPassword, StandardCharsets.UTF_8);
 	}
 	
 	public boolean compareHashes(String h1, String h2) {
-		if(h1.equals(h2)) {
-			return true;
-		} else {
-			return false;
-		}
+		return h1.equals(h2);
 	}
 }
