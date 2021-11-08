@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import logic.AccessControl;
 import logic.Crypto;
 import logic.Database;
 import logic.Log;
@@ -16,6 +17,7 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 	Log log = new Log();
 	Crypto crypto = new Crypto();
 	Session session = new Session();
+	AccessControl access = new AccessControl();
 	LocalDate localDate = LocalDate.now();
 	String path = "log\\";
 
@@ -31,7 +33,7 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 	}
 
 	public void print(String filename, String printer) throws RemoteException {
-		if(session.getSessionState()) {
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "print")) {
 			for (Printer p : printers) {
 				if(p.printerName.equals(printer)) {
 					p.addToQueue(filename); // add print to printer queue

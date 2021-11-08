@@ -2,6 +2,7 @@ package logic;
 
 import java.io.File;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Database {
@@ -35,6 +36,15 @@ public class Database {
 			System.out.println("Error: ResultSet is empty (null). Cannot retrieve " + columnLabel);
 		}
 		return "";
+	}
+	
+	public String getUserPermissions(String user, String permission) {
+		String query = "select * from permissions where user = ?";
+		ResultSet permissionsInfo = getQueryResult(query, user);
+		String permissions = getStringFromResultSet(permissionsInfo, permission);
+		
+		return permissions;
+		
 	}
 
 	public String[] getCredentials(String user) {

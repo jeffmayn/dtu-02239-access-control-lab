@@ -37,9 +37,14 @@ public class Printer {
     }
     
     public void topQueue(int job) {
-    	String temp = queue.get(job);
-    	queue.remove(job);
-    	queue.add(0, temp);	
+    	if(queue.isEmpty()) {
+    		System.out.println("queue is empty");
+    	} else {
+    	   	String temp = queue.get(job);
+        	queue.remove(job);
+        	queue.add(0, temp);	
+    	}
+ 
     }
     
     public void clearQueue() {
