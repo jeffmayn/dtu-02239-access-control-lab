@@ -1,5 +1,6 @@
 package logic;
 
+import java.io.File;
 import java.sql.*;
 import java.util.Random;
 
@@ -44,29 +45,79 @@ public class Database {
 
 		return new String[] {password, salt};
 	}
+	
+	private void sqlStatement(String sqlStmt) {
+					try {
+						stmt = c.createStatement();
+						stmt.executeUpdate(sqlStmt);
+						stmt.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}			
+	}
+	
+	private void dummyData() {
+		// populate tables
+		sqlStatement("insert into users values ('jeff','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('alice','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('bob','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('cecilia','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('david','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('erica','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('fred','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('george','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		
+		sqlStatement("insert into permissions values ('jeff',1,1,1,1,1,1,1,1,1)");
+		sqlStatement("insert into permissions values ('alice',1,1,1,1,1,1,1,1,1)");
+		sqlStatement("insert into permissions values ('bob',0,0,0,1,1,1,1,1,1)");
+		sqlStatement("insert into permissions values ('cecilia',1,1,1,0,0,1,0,0,0)");
+		sqlStatement("insert into permissions values ('david',1,1,0,0,0,0,0,0,0)");
+		sqlStatement("insert into permissions values ('erica',1,1,0,0,0,0,0,0,0)");
+		sqlStatement("insert into permissions values ('fred',1,1,0,0,0,0,0,0,0)");
+		sqlStatement("insert into permissions values ('george',1,1,0,0,0,0,0,0,0)");
+	}
+	
+	private boolean tableExists(String tableName){
+        try{
+            DatabaseMetaData md = c.getMetaData();
+            ResultSet rs = md.getTables(null, null, tableName, null);
+            if(rs.next()) {
+            	return true;
+            }
+        }catch(SQLException ex){
+          System.out.print(ex);
+        }
+        return false;
+    }
 
 	public void initialiseDatabase() {
 		try {
-			Random rand = new Random();
-			int rand_int = rand.nextInt(1000);
-			c = DriverManager.getConnection("jdbc:sqlite:database\\database" + rand_int + ".db");
+			
+			  File file = new File ("jdbc:sqlite:database\\database.db");
 
-			// create table
-			String sql = "create table users (user varchar(20), password varchar(200), salt varchar(200))";
-			stmt = c.createStatement();
-			stmt.executeUpdate(sql);
-			stmt.close();
+			  if(file.exists()) {
+			     } else {
+			    	 c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 
-			// populate table (user, password)
-			stmt = c.createStatement();
-
-			sql = "insert into users values ('admin','admin', '22-10-2021:21.18xx')";
-			stmt.executeUpdate(sql);
-
-			sql = "insert into users values ('jeff','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')";
-			stmt.executeUpdate(sql);
-			stmt.close();
-
+			    	 if(tableExists("users")){
+			    		 //System.out.println("table exists already");
+			    		} else {
+			    			sqlStatement("create table users (user varchar(20), password varchar(200), salt varchar(200))");
+							sqlStatement("create table permissions (user varchar(20), "
+																	+ "print boolean(0,1), "
+																	+ "queue boolean(0,1), "
+																	+ "topQueue boolean(0,1), "
+																	+ "start boolean(0,1), "
+																	+ "stop boolean(0,1), "
+																	+ "restart boolean(0,1), "
+																	+ "status boolean(0,1), "
+																	+ "readConfig boolean(0,1), "
+																	+ "setConfig boolean(0,1)"
+																	+ ")");
+							dummyData();
+			    		}	
+			     }
 		} catch ( Exception e ) {
 			System.err.println("[Server]: " + e.getClass().getName() + " --> " + e.getMessage() );
 			System.exit(0);
@@ -76,7 +127,7 @@ public class Database {
 	public void disconnect() {
 		try {
 			c.close();
-			stmt.close();
+			//stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
