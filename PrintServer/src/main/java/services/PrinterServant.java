@@ -11,7 +11,7 @@ import logic.Log;
 import logic.Session;
 
 public class PrinterServant  extends UnicastRemoteObject implements PrinterService {
-	ArrayList<Printer> printers = new ArrayList<>();
+	ArrayList<Printer> printers = new ArrayList<Printer>();
 	Database db = new Database();
 	Log log = new Log();
 	Crypto crypto = new Crypto();

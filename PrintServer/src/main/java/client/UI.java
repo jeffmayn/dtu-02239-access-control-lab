@@ -17,16 +17,14 @@ public class UI {
 			//printOptions();
 			//String n = input.next();
 
-			switch (i) {
-				case "print" -> printLogic(input, service);
-				case "1" -> printOptions();
-				case "queue" -> queue(service, input);
-				case "top" -> topQueueLogic(service, input);
-				case "start" -> start(service);
-				case "stop" -> stop(service);
-				case "restart" -> restart(service);
-				case "status" -> status(service, input);
-			}
+			if(i.equals("print")) { printLogic(input, service); } 
+			  else if (i.equals("1")) { printOptions(); } 
+			  else if (i.equals("queue")) { queue(service, input); }
+			  else if (i.equals("top")) { topQueueLogic(service, input); }
+			  else if (i.equals("start")) { start(service); }
+			  else if (i.equals("stop")) { stop(service); }
+			  else if (i.equals("restart")) { restart(service); }
+			  else if (i.equals("status")) { status(service, input); }
 		}
 	}
 	

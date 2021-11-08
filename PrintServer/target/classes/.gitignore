@@ -1,8 +1,4 @@
-/application/
-/client/
-/server/
-/services/
 /logic/
-/Printer.class
-/Main.class
+/services/
+/client/
 /test/

@@ -18,9 +18,11 @@ public class Client {
 		try {
 			 service = (PrinterService) Naming.lookup("rmi://localhost:" + portnumber + "/printer");
 		} 
-		catch (MalformedURLException | RemoteException | NotBoundException e) { e.printStackTrace(); }
+		catch (MalformedURLException e) { e.printStackTrace(); } 
+		catch (RemoteException e) 		{ e.printStackTrace(); } 
+		catch (NotBoundException e) 	{ e.printStackTrace(); }
 
-		// boot up server: creates database & printers
+				// boot up server: creates database & printers
 				service.start(); 
 				
 				// login & authenticate user
