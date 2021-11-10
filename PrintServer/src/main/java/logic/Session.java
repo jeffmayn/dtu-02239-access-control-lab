@@ -24,13 +24,16 @@ public class Session {
 		if(elapsedTime < time*1000) {
 			this.sessionAlive = true;	
 		} else {
-			this.sessionAlive = false;
+			killSession();
 		}	
 		return this.sessionAlive;
 	}
 	
-	public void killSession() {
+	public boolean killSession() {
 		this.sessionAlive = false;
+		this.loginStarted = 0;
+		this.uid = "";
+		return false;
 	}
 	
 	public String getUser() {

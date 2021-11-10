@@ -14,7 +14,7 @@ public class Main{
 	public static void main(String[] args) throws RemoteException {
 		server.begin(port);
 		client.begin(port);
-		server.stopServer();
+		//server.stopServer();
 	}
 
 }

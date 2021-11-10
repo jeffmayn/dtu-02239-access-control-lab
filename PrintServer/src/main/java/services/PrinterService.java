@@ -24,5 +24,7 @@ public interface PrinterService extends Remote {
 	
 	String authenticateUser(String uid, String password) throws RemoteException;
 	
+	void buildDatabase() throws RemoteException;
+	
 
 }

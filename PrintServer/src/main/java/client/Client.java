@@ -22,49 +22,78 @@ public class Client {
 		catch (RemoteException e) 		{ e.printStackTrace(); } 
 		catch (NotBoundException e) 	{ e.printStackTrace(); }
 
-				// boot up server: creates database & printers
-				service.start(); 
+				// creates the database
+				service.buildDatabase();
 				
 				// login & authenticate user
-				if(login(service)) {	
+			//	if(login(service)) {	
 					// automated tests
 					if(ui.initialOptions(input)) {
-						
-						System.out.println(service.status("office"));
-						service.print("text1.txt","office");
-						service.print("text2.txt","office");
-						service.print("text3.txt","office");
-						service.print("text4.txt","office");
-						service.print("text5.txt","office");
-						System.out.println(service.queue("office"));
-						service.topQueue("office", 3);
-						System.out.println(service.queue("office"));
-		
-						service.print("text4.txt","home");
-						System.out.println(service.queue("home"));
-		
-						service.print("text6.txt","office");
-						service.restart();
-						
-						service.print("passwords.txt","office");
-						service.print("sometext.txt","office");
-						System.out.println(service.queue("office"));
-						
-						System.out.println(service.readConfig("lockout time"));
-						service.setConfig("lockout time", "20");
-						System.out.println(service.readConfig("lockout time"));
-						
-						try {
-							TimeUnit.SECONDS.sleep(11);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-						System.out.println(service.status("office"));
+							// log in as Bob
+							System.out.println("loggin in as Bob");
+							service.authenticateUser("bob", "password22");		
+							service.start();
+							System.out.println(service.status("office"));
+							service.print("text1.txt","office");
+							service.print("text2.txt","office");
+							service.print("text3.txt","office");
+							service.print("text4.txt","office");
+							service.print("text5.txt","office");
+							System.out.println(service.queue("office"));
+							service.topQueue("office", 3);
+							System.out.println(service.queue("office"));
+							
+							// timeout the session for Bob
+							try {
+								TimeUnit.SECONDS.sleep(11);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+							// log in as Alice
+							System.out.println("loggin in as Alice");
+							service.authenticateUser("alice", "password22");		
+							service.start();
+							service.print("text4.txt","home");
+							System.out.println(service.queue("home"));
+							System.out.println(service.readConfig("lockout time"));
+							service.setConfig("lockout time", "5");
+							System.out.println(service.readConfig("lockout time"));
+							
+							// timeout the session for Alice
+							try {
+								TimeUnit.SECONDS.sleep(7);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+			
+							// log in as David
+							System.out.println("loggin in as David");
+							service.authenticateUser("david", "password22");	
+							service.print("text6.txt","office");
+							service.restart();
+							
+							service.print("passwords.txt","office");
+							service.print("sometext.txt","office");
+							System.out.println(service.queue("office"));
+							
+							System.out.println(service.status("office"));
+							service.print("text5.txt","office");
+							service.stop();
+							//ui.sessionExpired(input)
+					
 					// manual
+							/*
 					} else {
 						ui.printOptions();		
 						ui.startLoop(input, service);
-					}		
+					}	
+					*/
+				} else {
+					if(login(service)) {
+						ui.printOptions();		
+						ui.startLoop(input, service);
+					}
 				}
 	}
 

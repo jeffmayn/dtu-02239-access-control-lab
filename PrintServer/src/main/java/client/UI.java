@@ -162,6 +162,12 @@ public class UI {
 		printOptions();
 	}
 	
+	public boolean sessionExpired(Scanner input) {
+		System.out.println("You have been logged out. Want to login again?");	 
+		 String choice = input.nextLine();
+		 return choice.equals("1");
+	}
+	
 
 	public boolean initialOptions(Scanner input) {
 		 System.out.println("Press (1) for automated tests\nPress (2) for manuel");	 

@@ -49,21 +49,23 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 			queue.append("Session expired");
 			// System.out.println("Session expired");
 		} else {
-			queue.append("Queue for printer: ");
-			queue.append(printer);
-			queue.append("\n");
-			for (Printer p : printers) {
-				if(p.printerName.equals(printer)) {
-					writeLogEntry("[" + loggedInUser + "]: Queue for printer: " + printer, path + "server.log");
-
-					int i = 1;
-					for (String job : p.getQueue()) {
-						queue.append("<");
-						queue.append(i);
-						queue.append("> <");
-						queue.append(job);
-						queue.append(">\n");
-						i++;
+			if(access.hasPermission(loggedInUser, db, "queue")) {
+				queue.append("Queue for printer: ");
+				queue.append(printer);
+				queue.append("\n");
+				for (Printer p : printers) {
+					if(p.printerName.equals(printer)) {
+						writeLogEntry("[" + loggedInUser + "]: Queue for printer: " + printer, path + "server.log");
+	
+						int i = 1;
+						for (String job : p.getQueue()) {
+							queue.append("<");
+							queue.append(i);
+							queue.append("> <");
+							queue.append(job);
+							queue.append(">\n");
+							i++;
+						}
 					}
 				}
 			}
@@ -72,7 +74,7 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 	}
 
 	public void topQueue(String printer, int job)  throws RemoteException{
-		if(session.getSessionState()) {
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "topQueue")) {
 			for(Printer p : printers) {
 				if(p.printerName.equals(printer)) {
 					writeLogEntry("[Server]: Moving job" + "[" + job + "] to top.", path + "server.log");
@@ -81,22 +83,28 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 			}
 		}
 	}
+	
+	public void buildDatabase() throws RemoteException {
+		db.initialiseDatabase();
+	}
 
 	public void start() throws RemoteException{
-		writeLogEntry("[server]: starting..", path + "server.log");
-		db.initialiseDatabase();
-		initialisePrinters();
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "start")) {
+			writeLogEntry("[server]: starting..", path + "server.log");
+		
+			initialisePrinters();
+		}
 	}
 
 	public void stop() throws RemoteException {
-		if(session.getSessionState()) {
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "stop") ) {
 			writeLogEntry("[server]: stopping..", path + "server.log");
-			db.disconnect();
+		//	db.disconnect();
 		}
 	}
 
 	public void restart()  throws RemoteException{
-		if(session.getSessionState()) {
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "restart")) {
 			writeLogEntry("[server]: restarting..", path + "server.log");
 			stop();
 			printers.clear();
@@ -122,22 +130,23 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 	}
 
 	public String readConfig(String parameter)  throws RemoteException{
-		String retVal;
-		if(!session.getSessionState()) {
-			 retVal = "Session expired";
-		} else {
+		String retVal = "";
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "readConfig")) {
+		
 			retVal = "invalid parameter";
 			writeLogEntry("[" + loggedInUser + "]: reading server config", path + "server.log");
 
 			if(parameter.equals("lockout time")) {
 				retVal = "server configuration. Lockout time = " + (lockoutTime / 1000) + " seconds";
+			} else {
+				 retVal = "Session expired";
 			}
 		}
 		return retVal;
 	}
 
 	public void setConfig(String parameter, String value) throws RemoteException {
-		if(session.getSessionState()) {
+		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "setConfig")) {
 			if(parameter.equals("lockout time")) {
 				writeLogEntry("[" + loggedInUser + "]: sets lockout time to: " + value, path + "server.log");
 				lockoutTime = Integer.parseInt(value) * 1000;
