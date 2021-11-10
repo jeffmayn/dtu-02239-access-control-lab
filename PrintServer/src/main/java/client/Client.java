@@ -31,7 +31,7 @@ public class Client {
 					if(ui.initialOptions(input)) {
 							// log in as Bob
 							System.out.println("loggin in as Bob");
-							service.authenticateUser("bob", "password22");		
+							System.out.println(service.authenticateUser("bob", "password22"));		
 							service.start();
 							System.out.println(service.status("office"));
 							service.print("text1.txt","office");
@@ -50,9 +50,11 @@ public class Client {
 								e.printStackTrace();
 							}
 							
+							service.print("text4.txt","home");
+							
 							// log in as Alice
-							System.out.println("loggin in as Alice");
-							service.authenticateUser("alice", "password22");		
+							System.out.println("logging in as Alice");
+							System.out.println(service.authenticateUser("alice", "password22"));		
 							service.start();
 							service.print("text4.txt","home");
 							System.out.println(service.queue("home"));
@@ -62,13 +64,15 @@ public class Client {
 							
 							// timeout the session for Alice
 							try {
-								TimeUnit.SECONDS.sleep(7);
+								TimeUnit.SECONDS.sleep(11);
 							} catch (InterruptedException e) {
 								e.printStackTrace();
 							}
+							
+							service.print("text4.txt","home");
 			
 							// log in as David
-							System.out.println("loggin in as David");
+							System.out.println("logging in as David");
 							service.authenticateUser("david", "password22");	
 							service.print("text6.txt","office");
 							service.restart();

@@ -20,3 +20,147 @@
 10-11-2021 14:18:03 -- [server]: stopping..
 10-11-2021 14:18:03 -- [server]: starting..
 10-11-2021 14:18:03 -- [alice]: Queue for printer: office
+10-11-2021 14:24:18 -- [bob]: logged in successfully
+10-11-2021 14:24:18 -- [server]: starting..
+10-11-2021 14:24:18 -- [bob]: was denied permission to: print
+10-11-2021 14:24:18 -- [bob]: was denied permission to: print
+10-11-2021 14:24:18 -- [bob]: was denied permission to: print
+10-11-2021 14:24:18 -- [bob]: was denied permission to: print
+10-11-2021 14:24:18 -- [bob]: was denied permission to: print
+10-11-2021 14:24:18 -- [bob]: was denied permission to: queue
+10-11-2021 14:24:18 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:24:18 -- [bob]: was denied permission to: queue
+10-11-2021 14:24:29 -- [alice]: logged in successfully
+10-11-2021 14:24:29 -- [server]: starting..
+10-11-2021 14:24:29 -- [alice]: Queue for printer: home
+10-11-2021 14:24:29 -- [alice]: Queue for printer: home
+10-11-2021 14:24:29 -- [alice]: reading server config
+10-11-2021 14:24:29 -- [alice]: sets lockout time to: 5
+10-11-2021 14:24:29 -- [alice]: reading server config
+10-11-2021 14:24:36 -- [david]: Too many unsuccessful login attempts. Lock applied
+10-11-2021 14:24:36 -- [server]: restarting..
+10-11-2021 14:24:36 -- [server]: stopping..
+10-11-2021 14:24:36 -- [server]: starting..
+10-11-2021 14:24:36 -- [alice]: Queue for printer: office
+10-11-2021 14:24:36 -- [server]: stopping..
+10-11-2021 14:25:51 -- [bob]: logged in successfully
+10-11-2021 14:25:51 -- [server]: starting..
+10-11-2021 14:25:51 -- [bob]: was denied permission to: print
+10-11-2021 14:25:51 -- [bob]: was denied permission to: print
+10-11-2021 14:25:51 -- [bob]: was denied permission to: print
+10-11-2021 14:25:51 -- [bob]: was denied permission to: print
+10-11-2021 14:25:51 -- [bob]: was denied permission to: print
+10-11-2021 14:25:51 -- [bob]: was denied permission to: queue
+10-11-2021 14:25:51 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:25:51 -- [bob]: was denied permission to: queue
+10-11-2021 14:26:02 -- [alice]: logged in successfully
+10-11-2021 14:26:02 -- [server]: starting..
+10-11-2021 14:26:02 -- [alice]: Queue for printer: home
+10-11-2021 14:26:02 -- [alice]: Queue for printer: home
+10-11-2021 14:26:02 -- [alice]: Queue for printer: home
+10-11-2021 14:26:02 -- [alice]: reading server config
+10-11-2021 14:26:02 -- [alice]: sets lockout time to: 5
+10-11-2021 14:26:02 -- [alice]: reading server config
+10-11-2021 14:26:09 -- [david]: Too many unsuccessful login attempts. Lock applied
+10-11-2021 14:26:09 -- [server]: restarting..
+10-11-2021 14:26:09 -- [server]: stopping..
+10-11-2021 14:26:09 -- [server]: starting..
+10-11-2021 14:26:09 -- [alice]: Queue for printer: office
+10-11-2021 14:26:09 -- [server]: stopping..
+10-11-2021 14:26:32 -- [bob]: logged in successfully
+10-11-2021 14:26:32 -- [server]: starting..
+10-11-2021 14:26:32 -- [bob]: was denied permission to: print
+10-11-2021 14:26:32 -- [bob]: was denied permission to: print
+10-11-2021 14:26:32 -- [bob]: was denied permission to: print
+10-11-2021 14:26:32 -- [bob]: was denied permission to: print
+10-11-2021 14:26:32 -- [bob]: was denied permission to: print
+10-11-2021 14:26:32 -- [bob]: was denied permission to: queue
+10-11-2021 14:26:32 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:26:32 -- [bob]: was denied permission to: queue
+10-11-2021 14:26:43 -- [alice]: logged in successfully
+10-11-2021 14:26:44 -- [server]: starting..
+10-11-2021 14:26:44 -- [alice]: Queue for printer: home
+10-11-2021 14:26:44 -- [alice]: Queue for printer: home
+10-11-2021 14:26:44 -- [alice]: reading server config
+10-11-2021 14:26:44 -- [alice]: sets lockout time to: 5
+10-11-2021 14:26:44 -- [alice]: reading server config
+10-11-2021 14:26:51 -- [david]: Too many unsuccessful login attempts. Lock applied
+10-11-2021 14:26:51 -- [server]: restarting..
+10-11-2021 14:26:51 -- [server]: stopping..
+10-11-2021 14:26:51 -- [server]: starting..
+10-11-2021 14:26:51 -- [alice]: Queue for printer: office
+10-11-2021 14:26:51 -- [server]: stopping..
+10-11-2021 14:28:09 -- [bob]: logged in successfully
+10-11-2021 14:28:09 -- [server]: starting..
+10-11-2021 14:28:09 -- [bob]: was denied permission to: print
+10-11-2021 14:28:09 -- [bob]: was denied permission to: print
+10-11-2021 14:28:09 -- [bob]: was denied permission to: print
+10-11-2021 14:28:09 -- [bob]: was denied permission to: print
+10-11-2021 14:28:09 -- [bob]: was denied permission to: print
+10-11-2021 14:28:09 -- [bob]: was denied permission to: queue
+10-11-2021 14:28:09 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:28:09 -- [bob]: was denied permission to: queue
+10-11-2021 14:28:20 -- [alice]: logged in successfully
+10-11-2021 14:28:20 -- [server]: starting..
+10-11-2021 14:28:20 -- [alice]: Queue for printer: home
+10-11-2021 14:28:20 -- [alice]: Queue for printer: home
+10-11-2021 14:28:20 -- [alice]: Queue for printer: home
+10-11-2021 14:28:20 -- [alice]: reading server config
+10-11-2021 14:28:20 -- [alice]: sets lockout time to: 5
+10-11-2021 14:28:20 -- [alice]: reading server config
+10-11-2021 14:28:31 -- [david]: Too many unsuccessful login attempts. Lock applied
+10-11-2021 14:29:17 -- [bob]: logged in successfully
+10-11-2021 14:29:17 -- [server]: starting..
+10-11-2021 14:29:17 -- [bob]: was denied permission to: print
+10-11-2021 14:29:17 -- [bob]: was denied permission to: print
+10-11-2021 14:29:17 -- [bob]: was denied permission to: print
+10-11-2021 14:29:17 -- [bob]: was denied permission to: print
+10-11-2021 14:29:17 -- [bob]: was denied permission to: print
+10-11-2021 14:29:17 -- [bob]: was denied permission to: queue
+10-11-2021 14:29:17 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:29:17 -- [bob]: was denied permission to: queue
+10-11-2021 14:29:28 -- [alice]: logged in successfully
+10-11-2021 14:29:28 -- [server]: starting..
+10-11-2021 14:29:28 -- [alice]: Queue for printer: home
+10-11-2021 14:29:28 -- [alice]: Queue for printer: home
+10-11-2021 14:29:28 -- [alice]: reading server config
+10-11-2021 14:29:28 -- [alice]: sets lockout time to: 5
+10-11-2021 14:29:28 -- [alice]: reading server config
+10-11-2021 14:29:39 -- [david]: Too many unsuccessful login attempts. Lock applied
+10-11-2021 14:32:38 -- [bob]: logged in successfully
+10-11-2021 14:32:38 -- [server]: starting..
+10-11-2021 14:32:38 -- [bob]: was denied permission to: print
+10-11-2021 14:32:38 -- [bob]: was denied permission to: print
+10-11-2021 14:32:38 -- [bob]: was denied permission to: print
+10-11-2021 14:32:38 -- [bob]: was denied permission to: print
+10-11-2021 14:32:38 -- [bob]: was denied permission to: print
+10-11-2021 14:32:38 -- [bob]: was denied permission to: queue
+10-11-2021 14:32:38 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:32:38 -- [bob]: was denied permission to: queue
+10-11-2021 14:32:49 -- [alice]: logged in successfully
+10-11-2021 14:32:49 -- [server]: starting..
+10-11-2021 14:32:49 -- [alice]: Queue for printer: home
+10-11-2021 14:32:49 -- [alice]: Queue for printer: home
+10-11-2021 14:32:49 -- [alice]: Queue for printer: home
+10-11-2021 14:32:49 -- [alice]: Queue for printer: home
+10-11-2021 14:32:49 -- [alice]: reading server config
+10-11-2021 14:32:49 -- [alice]: sets lockout time to: 5
+10-11-2021 14:32:49 -- [alice]: reading server config
+10-11-2021 14:33:14 -- [bob]: logged in successfully
+10-11-2021 14:33:14 -- [server]: starting..
+10-11-2021 14:33:14 -- [bob]: was denied permission to: print
+10-11-2021 14:33:14 -- [bob]: was denied permission to: print
+10-11-2021 14:33:14 -- [bob]: was denied permission to: print
+10-11-2021 14:33:14 -- [bob]: was denied permission to: print
+10-11-2021 14:33:14 -- [bob]: was denied permission to: print
+10-11-2021 14:33:14 -- [bob]: was denied permission to: queue
+10-11-2021 14:33:14 -- [bob]: was denied permission to: topQueue
+10-11-2021 14:33:14 -- [bob]: was denied permission to: queue
+10-11-2021 14:33:25 -- [alice]: logged in successfully
+10-11-2021 14:33:25 -- [server]: starting..
+10-11-2021 14:33:25 -- [alice]: Queue for printer: home
+10-11-2021 14:33:25 -- [alice]: Queue for printer: home
+10-11-2021 14:33:25 -- [alice]: reading server config
+10-11-2021 14:33:25 -- [alice]: sets lockout time to: 5
+10-11-2021 14:33:25 -- [alice]: reading server config
+10-11-2021 14:33:36 -- [david]: Too many unsuccessful login attempts. Lock applied
