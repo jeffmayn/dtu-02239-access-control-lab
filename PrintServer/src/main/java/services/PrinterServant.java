@@ -99,7 +99,8 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 	public void stop() throws RemoteException {
 		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "stop") ) {
 			writeLogEntry("[server]: stopping..", path + "server.log");
-		//	db.disconnect();
+			printers.clear();
+
 		}
 	}
 
@@ -107,7 +108,6 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 		if(session.getSessionState() && access.hasPermission(loggedInUser, db, "restart")) {
 			writeLogEntry("[server]: restarting..", path + "server.log");
 			stop();
-			printers.clear();
 			start();
 		}
 	}
@@ -217,5 +217,11 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 			returnVal = "Too many attempts. Try again in " + (lockoutTime - (System.currentTimeMillis() - timestamp)) / 1000 + " seconds";
 		}
 		return returnVal;
+	}
+
+	public void logout() throws RemoteException {
+		session.killSession();
+		authAttempts = 0;
+		
 	}
 }

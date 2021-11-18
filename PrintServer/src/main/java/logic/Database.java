@@ -38,12 +38,27 @@ public class Database {
 		return "";
 	}
 	
-	public String getUserPermissions(String user, String permission) {
-		String query = "select * from permissions where user = ?";
-		ResultSet permissionsInfo = getQueryResult(query, user);
-		String permissions = getStringFromResultSet(permissionsInfo, permission);
+	public boolean getUserPermissions(String user, String permissionRequest) {
 		
-		return permissions;
+		boolean hasPermission = false;
+		
+		String q1 = "select * from users where user = ?";
+		ResultSet permissionsInfo1 = getQueryResult(q1, user);
+		String userRoles = getStringFromResultSet(permissionsInfo1, "roles");
+		
+		String[] roles = userRoles.split("\\s*,\\s*");
+		
+		for(String role : roles) {
+			
+			String query = "select * from permissions where roles = ?";
+			ResultSet permissionsInfo = getQueryResult(query, role);
+			String permissions = getStringFromResultSet(permissionsInfo, permissionRequest);
+			if(permissions.equals("1")){
+				hasPermission = true;
+			}	
+		}
+
+		return hasPermission;
 		
 	}
 
@@ -69,23 +84,20 @@ public class Database {
 	
 	private void dummyData() {
 		// populate tables
-		sqlStatement("insert into users values ('jeff','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('alice','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('bob','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('cecilia','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('david','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('erica','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('fred','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
-		sqlStatement("insert into users values ('george','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz')");
+		sqlStatement("insert into users values ('jeff','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'manager')");
+		sqlStatement("insert into users values ('alice','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'manager')");
+		sqlStatement("insert into users values ('bob','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'janitor, service-tech')");
+		sqlStatement("insert into users values ('cecilia','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'power-user')");
+		sqlStatement("insert into users values ('david','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'user')");
+		sqlStatement("insert into users values ('erica','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'user')");
+		sqlStatement("insert into users values ('fred','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'user')");
+		sqlStatement("insert into users values ('george','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'user')");
 		
-		sqlStatement("insert into permissions values ('jeff',1,1,1,1,1,1,1,1,1)");
-		sqlStatement("insert into permissions values ('alice',1,1,1,1,1,1,1,1,1)");
-		sqlStatement("insert into permissions values ('bob',0,0,0,1,1,1,1,1,1)");
-		sqlStatement("insert into permissions values ('cecilia',1,1,1,0,0,1,0,0,0)");
-		sqlStatement("insert into permissions values ('david',1,1,0,0,0,0,0,0,0)");
-		sqlStatement("insert into permissions values ('erica',1,1,0,0,0,0,0,0,0)");
-		sqlStatement("insert into permissions values ('fred',1,1,0,0,0,0,0,0,0)");
-		sqlStatement("insert into permissions values ('george',1,1,0,0,0,0,0,0,0)");
+		sqlStatement("insert into permissions values ('manager',1,1,1,1,1,1,1,1,1)");
+		sqlStatement("insert into permissions values ('power-user',1,1,1,0,0,1,0,0,0)");
+		sqlStatement("insert into permissions values ('service-tech',0,0,0,1,1,1,1,1,1)");
+		sqlStatement("insert into permissions values ('janitor',0,0,0,0,0,1,0,0,0)");	
+		sqlStatement("insert into permissions values ('user',1,1,0,0,0,0,0,0,0)");
 	}
 	
 	private boolean tableExists(String tableName){
@@ -107,14 +119,15 @@ public class Database {
 			  File file = new File ("jdbc:sqlite:database\\database.db");
 
 			  if(file.exists()) {
+				  
 			     } else {
 			    	 c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 
 			    	 if(tableExists("users")){
 			    		 //System.out.println("table exists already");
 			    		} else {
-			    			sqlStatement("create table users (user varchar(20), password varchar(200), salt varchar(200))");
-							sqlStatement("create table permissions (user varchar(20), "
+			    			sqlStatement("create table users (user varchar(20), password varchar(200), salt varchar(200), roles varchar(200))");
+							sqlStatement("create table permissions (roles varchar(200), "
 																	+ "print boolean(0,1), "
 																	+ "queue boolean(0,1), "
 																	+ "topQueue boolean(0,1), "
@@ -125,6 +138,7 @@ public class Database {
 																	+ "readConfig boolean(0,1), "
 																	+ "setConfig boolean(0,1)"
 																	+ ")");
+							
 							dummyData();
 			    		}	
 			     }
