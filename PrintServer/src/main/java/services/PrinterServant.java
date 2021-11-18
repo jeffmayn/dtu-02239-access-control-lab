@@ -224,4 +224,17 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 		authAttempts = 0;
 		
 	}
+
+	public void createNewUser(String uid, String password, String salt, String[] roles) throws RemoteException {
+		db.createNewUser(uid, password, salt, roles);
+		writeLogEntry("[server]: created user: " + uid, path + "server.log");
+		
+	}
+
+	public void deleteUser(String user) throws RemoteException {
+		db.deleteUser(user);
+		writeLogEntry("[server]: user " + user + " has been died in a car crash.. so sad.. deleting him", path + "server.log");
+		
+	}
+
 }

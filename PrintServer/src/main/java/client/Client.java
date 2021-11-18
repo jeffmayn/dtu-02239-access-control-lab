@@ -228,6 +228,66 @@ public class Client {
 								e.printStackTrace();
 							}
 							
+							// delete Bob
+							System.out.println("Retiring Bob..");
+							service.deleteUser("bob");
+							
+							
+							// Creating new user Henry
+							System.out.println("Creating user: Henry with role: user");
+							createNewUser(service, "henry", "password22", "saltyMcSalty222", "user");
+							
+							// log in as Henry
+							System.out.println("loggin in as Henry");
+							System.out.println(service.authenticateUser("henry", "password22"));		
+							service.start();
+							System.out.println(service.status("office"));
+							service.print("text1.txt","office");
+							service.print("text2.txt","office");
+							service.print("text3.txt","office");
+							service.print("text4.txt","office");
+							System.out.println(service.queue("office"));
+							service.topQueue("office", 3);
+							System.out.println(service.queue("office"));
+							System.out.println(service.readConfig("lockout time"));
+							service.setConfig("lockout time", "2");
+							System.out.println(service.readConfig("lockout time"));
+							System.out.println(service.queue("office"));
+							service.restart();
+							service.stop();
+							
+							service.logout();
+							
+							// Creating new user Ida
+							System.out.println("Creating user: Ida with role: Power User");
+							createNewUser(service, "ida", "password22", "saltyMcSalty222", "power-user");
+							
+						
+							// log in as Ida
+							System.out.println("loggin in as Ida");
+							System.out.println(service.authenticateUser("ida", "password22"));		
+							service.start();
+							System.out.println(service.status("office"));
+							service.print("text1.txt","office");
+							service.print("text2.txt","office");
+							service.print("text3.txt","office");
+							service.print("text4.txt","office");
+							System.out.println(service.queue("office"));
+							service.topQueue("office", 3);
+							System.out.println(service.queue("office"));
+							System.out.println(service.readConfig("lockout time"));
+							service.setConfig("lockout time", "2");
+							System.out.println(service.readConfig("lockout time"));
+							System.out.println(service.queue("office"));
+							service.restart();
+							service.stop();
+							
+							service.logout();
+							
+							
+							
+							
+							
 							
 							
 	
@@ -240,6 +300,25 @@ public class Client {
 						ui.startLoop(input, service);
 					}
 				}
+	}
+	
+	public void deleteUser(PrinterService service, String uid) {
+		try {
+			service.deleteUser(uid);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void createNewUser(PrinterService service, String name, String password, String salt, String roles) {
+		
+		String[] listRoles = roles.split("\\s*,\\s*");
+		
+		try {
+			service.createNewUser(name, password, salt, listRoles);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean login(PrinterService service) throws RemoteException {

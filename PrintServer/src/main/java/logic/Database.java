@@ -1,5 +1,6 @@
 package logic;
 
+import java.awt.List;
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
@@ -77,9 +78,24 @@ public class Database {
 						stmt.executeUpdate(sqlStmt);
 						stmt.close();
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}			
+	}
+	
+	public void deleteUser(String user) {
+		sqlStatement("delete from users where user = '" + user + "'");
+	}
+	
+	public void createNewUser(String uid, String password, String salt, String[] roles) {
+		
+		final String SEPARATOR = ",";
+		StringBuilder roleBuilder = new StringBuilder();
+
+		 for(String role : roles){
+			roleBuilder.append(role);
+			roleBuilder.append(SEPARATOR);
+		 }
+		sqlStatement("insert into users values ('" + uid + "','" + crypto.hash(password, salt) + "','" + salt + "', '"+ roleBuilder + "')");
 	}
 	
 	private void dummyData() {
