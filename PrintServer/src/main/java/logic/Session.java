@@ -4,7 +4,7 @@ public class Session {
 	long loginStarted = 0;
 	boolean sessionAlive = false;
 	String uid = "";
-	int time = 400;
+	int time = 40000;
 	
 	public Session() {};
 	

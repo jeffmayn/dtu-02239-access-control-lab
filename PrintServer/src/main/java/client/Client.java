@@ -189,7 +189,7 @@ public class Client {
 							System.out.println(service.readConfig("lockout time"));
 							System.out.println(service.queue("office"));
 							service.restart();
-							service.stop();
+						//	service.stop();
 							
 							service.logout();
 
@@ -228,15 +228,52 @@ public class Client {
 								e.printStackTrace();
 							}
 							
-							// delete Bob
-							System.out.println("Retiring Bob..");
-							service.deleteUser("bob");
 							
 							
-							// Creating new user Henry
+							
+							// Creating new user Henry (need to login as alice because managers
+							// are the only ones who can create new users
+							System.out.println(service.authenticateUser("alice", "password22"));
+							service.start();
 							System.out.println("Creating user: Henry with role: user");
 							createNewUser(service, "henry", "password22", "saltyMcSalty222", "user");
 							
+							// timeout the session for George
+							try {
+								TimeUnit.SECONDS.sleep(1);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+							
+							
+							// Creating new user Ida
+							System.out.println("Creating user: Ida with role: Power User");
+							createNewUser(service, "ida", "password22", "saltyMcSalty222", "power-user");
+							
+							// timeout the session for George
+							try {
+								TimeUnit.SECONDS.sleep(1);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+							
+							
+							// delete Bob
+							System.out.println("Retiring Bob..");
+							service.deleteUser("bob");
+							service.logout();
+							
+							// timeout the session for George
+							try {
+								TimeUnit.SECONDS.sleep(1);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							
+							
+						
 							// log in as Henry
 							System.out.println("loggin in as Henry");
 							System.out.println(service.authenticateUser("henry", "password22"));		
@@ -258,11 +295,6 @@ public class Client {
 							
 							service.logout();
 							
-							// Creating new user Ida
-							System.out.println("Creating user: Ida with role: Power User");
-							createNewUser(service, "ida", "password22", "saltyMcSalty222", "power-user");
-							
-						
 							// log in as Ida
 							System.out.println("loggin in as Ida");
 							System.out.println(service.authenticateUser("ida", "password22"));		

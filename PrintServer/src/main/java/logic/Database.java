@@ -2,6 +2,7 @@ package logic;
 
 import java.awt.List;
 import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,6 +11,8 @@ public class Database {
 	Connection c = null;
 	Statement stmt = null;
 	Crypto crypto = new Crypto();
+	String path = "log\\";
+
 
 	private ResultSet getQueryResult(String query, String... args) {
 
@@ -51,6 +54,8 @@ public class Database {
 		
 		for(String role : roles) {
 			
+		//	System.out.println("roles: " + role);
+			
 			String query = "select * from permissions where roles = ?";
 			ResultSet permissionsInfo = getQueryResult(query, role);
 			String permissions = getStringFromResultSet(permissionsInfo, permissionRequest);
@@ -82,20 +87,48 @@ public class Database {
 					}			
 	}
 	
-	public void deleteUser(String user) {
-		sqlStatement("delete from users where user = '" + user + "'");
+	public void deleteUser(String user, Session session, Log log) {
+		
+		boolean permission = getUserPermissions(session.uid, "admin");
+		
+		if(permission) {
+			sqlStatement("delete from users where user = '" + user + "'");
+			try {
+				log.writeLogEntry("[server]: user " + user + " has died in a car crash.. so sad.. deleting him", path + "server.log");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println(session.uid + " is not allowed to delete users");
+		}
+		
 	}
 	
-	public void createNewUser(String uid, String password, String salt, String[] roles) {
+	public void createNewUser(String uid, String password, String salt, String[] roles, Session session, Log log) {
 		
-		final String SEPARATOR = ",";
-		StringBuilder roleBuilder = new StringBuilder();
+		
+		boolean permission = getUserPermissions(session.uid, "admin");
+	
+		
+		if(permission) {
+			final String SEPARATOR = ",";
+			StringBuilder roleBuilder = new StringBuilder();
 
-		 for(String role : roles){
-			roleBuilder.append(role);
-			roleBuilder.append(SEPARATOR);
-		 }
-		sqlStatement("insert into users values ('" + uid + "','" + crypto.hash(password, salt) + "','" + salt + "', '"+ roleBuilder + "')");
+			 for(String role : roles){
+				roleBuilder.append(role);
+				roleBuilder.append(SEPARATOR);
+			 }
+			sqlStatement("insert into users values ('" + uid + "','" + crypto.hash(password, salt) + "','" + salt + "', '"+ roleBuilder + "')");
+			try {
+				log.writeLogEntry("[server]: created user: " + uid, path + "server.log");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println(session.uid + " is not allowed to create new users");
+		}
+		
+	
 	}
 	
 	private void dummyData() {
@@ -109,11 +142,11 @@ public class Database {
 		sqlStatement("insert into users values ('fred','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'user')");
 		sqlStatement("insert into users values ('george','" + crypto.hash("password22", "22-10-2021:21.18zz") + "','22-10-2021:21.18zz', 'user')");
 		
-		sqlStatement("insert into permissions values ('manager',1,1,1,1,1,1,1,1,1)");
-		sqlStatement("insert into permissions values ('power-user',1,1,1,0,0,1,0,0,0)");
-		sqlStatement("insert into permissions values ('service-tech',0,0,0,1,1,1,1,1,1)");
-		sqlStatement("insert into permissions values ('janitor',0,0,0,0,0,1,0,0,0)");	
-		sqlStatement("insert into permissions values ('user',1,1,0,0,0,0,0,0,0)");
+		sqlStatement("insert into permissions values ('manager',1,1,1,1,1,1,1,1,1,1)");
+		sqlStatement("insert into permissions values ('power-user',1,1,1,0,0,1,0,0,0,0)");
+		sqlStatement("insert into permissions values ('service-tech',0,0,0,1,1,1,1,1,1,0)");
+		sqlStatement("insert into permissions values ('janitor',0,0,0,0,0,1,0,0,0,0)");	
+		sqlStatement("insert into permissions values ('user',1,1,0,0,0,0,0,0,0,0)");
 	}
 	
 	private boolean tableExists(String tableName){
@@ -152,7 +185,8 @@ public class Database {
 																	+ "restart boolean(0,1), "
 																	+ "status boolean(0,1), "
 																	+ "readConfig boolean(0,1), "
-																	+ "setConfig boolean(0,1)"
+																	+ "setConfig boolean(0,1),"
+																	+ "admin boolean(0,1)"
 																	+ ")");
 							
 							dummyData();
