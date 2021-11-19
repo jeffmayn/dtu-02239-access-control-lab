@@ -219,9 +219,6 @@ public class Database {
 			  if(file.exists()) {
 				  c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 			     } else {
-			    	 System.out.println("Database does not exists. See Database.java line 115");
-			    	 // if database file does not exists, uncomment this to create a new database 
-/*
 			    	 c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 
 			    	 if(tableExists("users")){
@@ -243,7 +240,7 @@ public class Database {
 							
 							dummyData();
 							
-			    		}	*/
+			    		}	
 			     }
 		} catch ( Exception e ) {
 			System.err.println("[Server]: " + e.getClass().getName() + " --> " + e.getMessage() );
