@@ -1,6 +1,7 @@
 package logic;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,6 +10,7 @@ public class Database {
 	Connection c = null;
 	Statement stmt = null;
 	Crypto crypto = new Crypto();
+	String path = "log\\";
 
 	private ResultSet getQueryResult(String query, String... args) {
 
@@ -141,5 +143,19 @@ public class Database {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void createNewUser(String uid, String password, String salt, Session session, Log log) {
+		
+		sqlStatement("insert into users values ('" + uid + "','" + crypto.hash(password, salt) + "','" + salt + "')");
+		sqlStatement("insert into permissions values ('" + uid + "',0,0,0,0,0,0,0,0,0)");
+		System.out.println(uid + " has been created! Assigned with no privileges yet. Contact a manager");
+		
+		try {
+			log.writeLogEntry("[server]: created user: " + uid, path + "server.log");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

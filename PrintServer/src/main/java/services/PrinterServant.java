@@ -218,4 +218,15 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 		}
 		return returnVal;
 	}
+	
+	public void logout() throws RemoteException {
+		session.killSession();
+		authAttempts = 0;
+		
+	}
+
+	public void createNewUser(String uid, String password, String salt) throws RemoteException {
+		db.createNewUser(uid, password, salt, session, log);
+		
+	}
 }
