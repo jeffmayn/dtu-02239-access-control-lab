@@ -126,3 +126,257 @@
 19-11-2021 22:13:59 -- [server]: created user: bob
 19-11-2021 22:14:00 -- [server]: user henry has died in a car crash.. so sad.. deleting him
 19-11-2021 22:14:00 -- [server]: user ida has died in a car crash.. so sad.. deleting him
+19-11-2021 22:24:06 -- [bob]: logged in successfully
+19-11-2021 22:24:06 -- [server]: starting..
+19-11-2021 22:24:06 -- [bob]: denied access to: print
+19-11-2021 22:24:06 -- [bob]: denied access to: print
+19-11-2021 22:24:06 -- [bob]: denied access to: print
+19-11-2021 22:24:06 -- [bob]: denied access to: print
+19-11-2021 22:24:06 -- [bob]: denied access to: queue
+19-11-2021 22:24:06 -- [bob]: denied access to: topQueue
+19-11-2021 22:24:06 -- [bob]: denied access to: queue
+19-11-2021 22:24:06 -- [bob]: reading server config
+19-11-2021 22:24:06 -- [bob]: sets lockout time to: 2
+19-11-2021 22:24:06 -- [bob]: reading server config
+19-11-2021 22:24:06 -- [bob]: denied access to: queue
+19-11-2021 22:24:06 -- [server]: restarting..
+19-11-2021 22:24:06 -- [server]: stopping..
+19-11-2021 22:24:06 -- [server]: starting..
+19-11-2021 22:24:06 -- [server]: stopping..
+19-11-2021 22:24:07 -- [alice]: logged in successfully
+19-11-2021 22:24:07 -- [server]: starting..
+19-11-2021 22:24:07 -- [alice]: Queue for printer: office
+19-11-2021 22:24:07 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:07 -- [alice]: Queue for printer: office
+19-11-2021 22:24:07 -- [alice]: reading server config
+19-11-2021 22:24:07 -- [alice]: sets lockout time to: 2
+19-11-2021 22:24:07 -- [alice]: reading server config
+19-11-2021 22:24:07 -- [alice]: Queue for printer: office
+19-11-2021 22:24:07 -- [server]: restarting..
+19-11-2021 22:24:07 -- [server]: stopping..
+19-11-2021 22:24:07 -- [server]: starting..
+19-11-2021 22:24:08 -- [cecilia]: logged in successfully
+19-11-2021 22:24:08 -- [cecilia]: denied access to: start
+19-11-2021 22:24:08 -- [cecilia]: Queue for printer: office
+19-11-2021 22:24:08 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:08 -- [cecilia]: Queue for printer: office
+19-11-2021 22:24:08 -- [cecilia]: denied access to: readConfig
+19-11-2021 22:24:08 -- [cecilia]: denied access to: setConfig
+19-11-2021 22:24:08 -- [cecilia]: denied access to: readConfig
+19-11-2021 22:24:08 -- [cecilia]: Queue for printer: office
+19-11-2021 22:24:08 -- [server]: restarting..
+19-11-2021 22:24:08 -- [cecilia]: denied access to: stop
+19-11-2021 22:24:08 -- [cecilia]: denied access to: start
+19-11-2021 22:24:08 -- [cecilia]: denied access to: stop
+19-11-2021 22:24:09 -- [david]: logged in successfully
+19-11-2021 22:24:09 -- [david]: denied access to: start
+19-11-2021 22:24:09 -- [david]: Queue for printer: office
+19-11-2021 22:24:09 -- [david]: denied access to: topQueue
+19-11-2021 22:24:09 -- [david]: Queue for printer: office
+19-11-2021 22:24:09 -- [david]: denied access to: readConfig
+19-11-2021 22:24:09 -- [david]: denied access to: setConfig
+19-11-2021 22:24:09 -- [david]: denied access to: readConfig
+19-11-2021 22:24:09 -- [david]: Queue for printer: office
+19-11-2021 22:24:09 -- [david]: denied access to: restart
+19-11-2021 22:24:09 -- [david]: denied access to: stop
+19-11-2021 22:24:10 -- [erica]: logged in successfully
+19-11-2021 22:24:10 -- [erica]: denied access to: start
+19-11-2021 22:24:10 -- [erica]: Queue for printer: office
+19-11-2021 22:24:10 -- [erica]: denied access to: topQueue
+19-11-2021 22:24:10 -- [erica]: Queue for printer: office
+19-11-2021 22:24:10 -- [erica]: denied access to: readConfig
+19-11-2021 22:24:10 -- [erica]: denied access to: setConfig
+19-11-2021 22:24:10 -- [erica]: denied access to: readConfig
+19-11-2021 22:24:10 -- [erica]: Queue for printer: office
+19-11-2021 22:24:10 -- [erica]: denied access to: restart
+19-11-2021 22:24:10 -- [erica]: denied access to: stop
+19-11-2021 22:24:11 -- [fred]: logged in successfully
+19-11-2021 22:24:11 -- [fred]: denied access to: start
+19-11-2021 22:24:11 -- [fred]: Queue for printer: office
+19-11-2021 22:24:11 -- [fred]: denied access to: topQueue
+19-11-2021 22:24:11 -- [fred]: Queue for printer: office
+19-11-2021 22:24:11 -- [fred]: denied access to: readConfig
+19-11-2021 22:24:11 -- [fred]: denied access to: setConfig
+19-11-2021 22:24:11 -- [fred]: denied access to: readConfig
+19-11-2021 22:24:11 -- [fred]: Queue for printer: office
+19-11-2021 22:24:11 -- [fred]: denied access to: restart
+19-11-2021 22:24:12 -- [george]: logged in successfully
+19-11-2021 22:24:12 -- [george]: denied access to: start
+19-11-2021 22:24:12 -- [george]: Queue for printer: office
+19-11-2021 22:24:12 -- [george]: denied access to: topQueue
+19-11-2021 22:24:12 -- [george]: Queue for printer: office
+19-11-2021 22:24:12 -- [george]: denied access to: readConfig
+19-11-2021 22:24:12 -- [george]: denied access to: setConfig
+19-11-2021 22:24:12 -- [george]: denied access to: readConfig
+19-11-2021 22:24:12 -- [george]: Queue for printer: office
+19-11-2021 22:24:12 -- [george]: denied access to: restart
+19-11-2021 22:24:12 -- [george]: denied access to: stop
+19-11-2021 22:24:13 -- [alice]: logged in successfully
+19-11-2021 22:24:13 -- [server]: starting..
+19-11-2021 22:24:13 -- [server]: created user: henry
+19-11-2021 22:24:14 -- [server]: created user: ida
+19-11-2021 22:24:16 -- [server]: user bob has died in a car crash.. so sad.. deleting him
+19-11-2021 22:24:16 -- [server]: user george has been granted the roles: user,service-tech,
+19-11-2021 22:24:17 -- [henry]: logged in successfully
+19-11-2021 22:24:17 -- [henry]: denied access to: start
+19-11-2021 22:24:17 -- [server]: user henry has been denied granting roles to: henry
+19-11-2021 22:24:17 -- [henry]: Queue for printer: office
+19-11-2021 22:24:17 -- [henry]: Queue for printer: office
+19-11-2021 22:24:17 -- [henry]: denied access to: topQueue
+19-11-2021 22:24:17 -- [henry]: Queue for printer: office
+19-11-2021 22:24:17 -- [henry]: Queue for printer: office
+19-11-2021 22:24:17 -- [henry]: denied access to: readConfig
+19-11-2021 22:24:17 -- [henry]: denied access to: setConfig
+19-11-2021 22:24:17 -- [henry]: denied access to: readConfig
+19-11-2021 22:24:17 -- [henry]: Queue for printer: office
+19-11-2021 22:24:17 -- [henry]: Queue for printer: office
+19-11-2021 22:24:17 -- [henry]: denied access to: restart
+19-11-2021 22:24:17 -- [henry]: denied access to: stop
+19-11-2021 22:24:17 -- [ida]: logged in successfully
+19-11-2021 22:24:17 -- [ida]: denied access to: start
+19-11-2021 22:24:17 -- [ida]: Queue for printer: office
+19-11-2021 22:24:17 -- [ida]: Queue for printer: office
+19-11-2021 22:24:17 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:17 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:17 -- [ida]: Queue for printer: office
+19-11-2021 22:24:17 -- [ida]: Queue for printer: office
+19-11-2021 22:24:17 -- [ida]: denied access to: readConfig
+19-11-2021 22:24:17 -- [ida]: denied access to: setConfig
+19-11-2021 22:24:17 -- [ida]: denied access to: readConfig
+19-11-2021 22:24:17 -- [ida]: Queue for printer: office
+19-11-2021 22:24:17 -- [ida]: Queue for printer: office
+19-11-2021 22:24:17 -- [server]: restarting..
+19-11-2021 22:24:17 -- [ida]: denied access to: stop
+19-11-2021 22:24:17 -- [ida]: denied access to: start
+19-11-2021 22:24:17 -- [ida]: denied access to: stop
+19-11-2021 22:24:17 -- [alice]: logged in successfully
+19-11-2021 22:24:17 -- [server]: starting..
+19-11-2021 22:24:17 -- [server]: created user: bob
+19-11-2021 22:24:18 -- [server]: user henry has died in a car crash.. so sad.. deleting him
+19-11-2021 22:24:18 -- [server]: user ida has died in a car crash.. so sad.. deleting him
+19-11-2021 22:24:21 -- [bob]: logged in successfully
+19-11-2021 22:24:21 -- [server]: starting..
+19-11-2021 22:24:21 -- [bob]: denied access to: print
+19-11-2021 22:24:21 -- [bob]: denied access to: print
+19-11-2021 22:24:21 -- [bob]: denied access to: print
+19-11-2021 22:24:21 -- [bob]: denied access to: print
+19-11-2021 22:24:21 -- [bob]: denied access to: queue
+19-11-2021 22:24:21 -- [bob]: denied access to: topQueue
+19-11-2021 22:24:21 -- [bob]: denied access to: queue
+19-11-2021 22:24:21 -- [bob]: reading server config
+19-11-2021 22:24:21 -- [bob]: sets lockout time to: 2
+19-11-2021 22:24:21 -- [bob]: reading server config
+19-11-2021 22:24:21 -- [bob]: denied access to: queue
+19-11-2021 22:24:21 -- [server]: restarting..
+19-11-2021 22:24:21 -- [server]: stopping..
+19-11-2021 22:24:21 -- [server]: starting..
+19-11-2021 22:24:21 -- [server]: stopping..
+19-11-2021 22:24:22 -- [alice]: logged in successfully
+19-11-2021 22:24:22 -- [server]: starting..
+19-11-2021 22:24:22 -- [alice]: Queue for printer: office
+19-11-2021 22:24:22 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:22 -- [alice]: Queue for printer: office
+19-11-2021 22:24:22 -- [alice]: reading server config
+19-11-2021 22:24:22 -- [alice]: sets lockout time to: 2
+19-11-2021 22:24:22 -- [alice]: reading server config
+19-11-2021 22:24:22 -- [alice]: Queue for printer: office
+19-11-2021 22:24:22 -- [server]: restarting..
+19-11-2021 22:24:22 -- [server]: stopping..
+19-11-2021 22:24:22 -- [server]: starting..
+19-11-2021 22:24:23 -- [cecilia]: logged in successfully
+19-11-2021 22:24:23 -- [cecilia]: denied access to: start
+19-11-2021 22:24:23 -- [cecilia]: Queue for printer: office
+19-11-2021 22:24:23 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:23 -- [cecilia]: Queue for printer: office
+19-11-2021 22:24:23 -- [cecilia]: denied access to: readConfig
+19-11-2021 22:24:23 -- [cecilia]: denied access to: setConfig
+19-11-2021 22:24:23 -- [cecilia]: denied access to: readConfig
+19-11-2021 22:24:23 -- [cecilia]: Queue for printer: office
+19-11-2021 22:24:23 -- [server]: restarting..
+19-11-2021 22:24:23 -- [cecilia]: denied access to: stop
+19-11-2021 22:24:23 -- [cecilia]: denied access to: start
+19-11-2021 22:24:23 -- [cecilia]: denied access to: stop
+19-11-2021 22:24:24 -- [david]: logged in successfully
+19-11-2021 22:24:24 -- [david]: denied access to: start
+19-11-2021 22:24:24 -- [david]: Queue for printer: office
+19-11-2021 22:24:24 -- [david]: denied access to: topQueue
+19-11-2021 22:24:24 -- [david]: Queue for printer: office
+19-11-2021 22:24:24 -- [david]: denied access to: readConfig
+19-11-2021 22:24:24 -- [david]: denied access to: setConfig
+19-11-2021 22:24:24 -- [david]: denied access to: readConfig
+19-11-2021 22:24:24 -- [david]: Queue for printer: office
+19-11-2021 22:24:24 -- [david]: denied access to: restart
+19-11-2021 22:24:24 -- [david]: denied access to: stop
+19-11-2021 22:24:25 -- [erica]: logged in successfully
+19-11-2021 22:24:25 -- [erica]: denied access to: start
+19-11-2021 22:24:25 -- [erica]: Queue for printer: office
+19-11-2021 22:24:25 -- [erica]: denied access to: topQueue
+19-11-2021 22:24:25 -- [erica]: Queue for printer: office
+19-11-2021 22:24:25 -- [erica]: denied access to: readConfig
+19-11-2021 22:24:25 -- [erica]: denied access to: setConfig
+19-11-2021 22:24:25 -- [erica]: denied access to: readConfig
+19-11-2021 22:24:25 -- [erica]: Queue for printer: office
+19-11-2021 22:24:25 -- [erica]: denied access to: restart
+19-11-2021 22:24:25 -- [erica]: denied access to: stop
+19-11-2021 22:24:26 -- [fred]: logged in successfully
+19-11-2021 22:24:26 -- [fred]: denied access to: start
+19-11-2021 22:24:26 -- [fred]: Queue for printer: office
+19-11-2021 22:24:26 -- [fred]: denied access to: topQueue
+19-11-2021 22:24:26 -- [fred]: Queue for printer: office
+19-11-2021 22:24:26 -- [fred]: denied access to: readConfig
+19-11-2021 22:24:26 -- [fred]: denied access to: setConfig
+19-11-2021 22:24:26 -- [fred]: denied access to: readConfig
+19-11-2021 22:24:26 -- [fred]: Queue for printer: office
+19-11-2021 22:24:26 -- [fred]: denied access to: restart
+19-11-2021 22:24:27 -- [george]: logged in successfully
+19-11-2021 22:24:27 -- [server]: starting..
+19-11-2021 22:24:27 -- [george]: Queue for printer: office
+19-11-2021 22:24:27 -- [george]: Queue for printer: office
+19-11-2021 22:24:27 -- [george]: denied access to: topQueue
+19-11-2021 22:24:27 -- [george]: Queue for printer: office
+19-11-2021 22:24:27 -- [george]: Queue for printer: office
+19-11-2021 22:24:27 -- [george]: reading server config
+19-11-2021 22:24:27 -- [george]: sets lockout time to: 2
+19-11-2021 22:24:27 -- [george]: reading server config
+19-11-2021 22:24:27 -- [george]: Queue for printer: office
+19-11-2021 22:24:27 -- [george]: Queue for printer: office
+19-11-2021 22:24:27 -- [server]: restarting..
+19-11-2021 22:24:27 -- [server]: stopping..
+19-11-2021 22:24:27 -- [server]: starting..
+19-11-2021 22:24:27 -- [server]: stopping..
+19-11-2021 22:24:28 -- [alice]: logged in successfully
+19-11-2021 22:24:28 -- [server]: starting..
+19-11-2021 22:24:28 -- [server]: created user: henry
+19-11-2021 22:24:29 -- [server]: created user: ida
+19-11-2021 22:24:30 -- [server]: user bob has died in a car crash.. so sad.. deleting him
+19-11-2021 22:24:30 -- [server]: user george has been granted the roles: user,service-tech,,service-tech,
+19-11-2021 22:24:31 -- [henry]: logged in successfully
+19-11-2021 22:24:31 -- [henry]: denied access to: start
+19-11-2021 22:24:31 -- [server]: user henry has been denied granting roles to: henry
+19-11-2021 22:24:31 -- [henry]: Queue for printer: office
+19-11-2021 22:24:31 -- [henry]: denied access to: topQueue
+19-11-2021 22:24:31 -- [henry]: Queue for printer: office
+19-11-2021 22:24:31 -- [henry]: denied access to: readConfig
+19-11-2021 22:24:31 -- [henry]: denied access to: setConfig
+19-11-2021 22:24:31 -- [henry]: denied access to: readConfig
+19-11-2021 22:24:31 -- [henry]: Queue for printer: office
+19-11-2021 22:24:31 -- [henry]: denied access to: restart
+19-11-2021 22:24:31 -- [henry]: denied access to: stop
+19-11-2021 22:24:31 -- [ida]: logged in successfully
+19-11-2021 22:24:31 -- [ida]: denied access to: start
+19-11-2021 22:24:31 -- [ida]: Queue for printer: office
+19-11-2021 22:24:31 -- [Server]: Moving job[3] to top.
+19-11-2021 22:24:31 -- [ida]: Queue for printer: office
+19-11-2021 22:24:31 -- [ida]: denied access to: readConfig
+19-11-2021 22:24:31 -- [ida]: denied access to: setConfig
+19-11-2021 22:24:31 -- [ida]: denied access to: readConfig
+19-11-2021 22:24:31 -- [ida]: Queue for printer: office
+19-11-2021 22:24:31 -- [server]: restarting..
+19-11-2021 22:24:31 -- [ida]: denied access to: stop
+19-11-2021 22:24:31 -- [ida]: denied access to: start
+19-11-2021 22:24:31 -- [ida]: denied access to: stop
+19-11-2021 22:24:31 -- [alice]: logged in successfully
+19-11-2021 22:24:31 -- [server]: starting..
+19-11-2021 22:24:31 -- [server]: created user: bob
+19-11-2021 22:24:32 -- [server]: user henry has died in a car crash.. so sad.. deleting him
+19-11-2021 22:24:32 -- [server]: user ida has died in a car crash.. so sad.. deleting him
