@@ -1,79 +1,77 @@
-19-11-2021 17:14:47 -- [bob]: logged in successfully
-19-11-2021 17:14:47 -- [server]: starting..
-19-11-2021 17:14:47 -- [bob]: was denied permission to: print
-19-11-2021 17:14:47 -- [bob]: was denied permission to: print
-19-11-2021 17:14:47 -- [bob]: was denied permission to: print
-19-11-2021 17:14:47 -- [bob]: was denied permission to: print
-19-11-2021 17:14:47 -- [bob]: was denied permission to: queue
-19-11-2021 17:14:47 -- [bob]: was denied permission to: topQueue
-19-11-2021 17:14:47 -- [bob]: was denied permission to: queue
-19-11-2021 17:14:48 -- [bob]: reading server config
-19-11-2021 17:14:48 -- [bob]: sets lockout time to: 2
-19-11-2021 17:14:48 -- [bob]: reading server config
-19-11-2021 17:14:48 -- [bob]: was denied permission to: queue
-19-11-2021 17:14:48 -- [server]: restarting..
-19-11-2021 17:14:48 -- [server]: stopping..
-19-11-2021 17:14:48 -- [server]: starting..
-19-11-2021 17:14:48 -- [server]: stopping..
-19-11-2021 17:14:49 -- [alice]: logged in successfully
-19-11-2021 17:14:49 -- [server]: starting..
-19-11-2021 17:14:49 -- [alice]: Queue for printer: office
-19-11-2021 17:14:49 -- [alice]: Queue for printer: office
-19-11-2021 17:14:49 -- [Server]: Moving job[3] to top.
-19-11-2021 17:14:49 -- [Server]: Moving job[3] to top.
-19-11-2021 17:14:49 -- [alice]: Queue for printer: office
-19-11-2021 17:14:49 -- [alice]: Queue for printer: office
-19-11-2021 17:14:49 -- [alice]: reading server config
-19-11-2021 17:14:49 -- [alice]: sets lockout time to: 2
-19-11-2021 17:14:49 -- [alice]: reading server config
-19-11-2021 17:14:49 -- [alice]: Queue for printer: office
-19-11-2021 17:14:49 -- [alice]: Queue for printer: office
-19-11-2021 17:14:49 -- [server]: restarting..
-19-11-2021 17:14:49 -- [server]: stopping..
-19-11-2021 17:14:49 -- [server]: starting..
-19-11-2021 17:14:50 -- [cecilia]: logged in successfully
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: start
-19-11-2021 17:14:50 -- [cecilia]: Queue for printer: office
-19-11-2021 17:14:50 -- [Server]: Moving job[3] to top.
-19-11-2021 17:14:50 -- [cecilia]: Queue for printer: office
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: readConfig
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: setConfig
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: readConfig
-19-11-2021 17:14:50 -- [cecilia]: Queue for printer: office
-19-11-2021 17:14:50 -- [server]: restarting..
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: stop
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: start
-19-11-2021 17:14:50 -- [cecilia]: was denied permission to: stop
-19-11-2021 17:14:51 -- [david]: logged in successfully
-19-11-2021 17:14:51 -- [david]: was denied permission to: start
-19-11-2021 17:14:51 -- [david]: was denied permission to: topQueue
-19-11-2021 17:14:51 -- [david]: was denied permission to: readConfig
-19-11-2021 17:14:51 -- [david]: was denied permission to: setConfig
-19-11-2021 17:14:51 -- [david]: was denied permission to: readConfig
-19-11-2021 17:14:51 -- [david]: was denied permission to: restart
-19-11-2021 17:14:51 -- [david]: was denied permission to: stop
-19-11-2021 17:14:52 -- [erica]: logged in successfully
-19-11-2021 17:14:52 -- [erica]: was denied permission to: start
-19-11-2021 17:14:52 -- [erica]: was denied permission to: topQueue
-19-11-2021 17:14:52 -- [erica]: was denied permission to: readConfig
-19-11-2021 17:14:52 -- [erica]: was denied permission to: setConfig
-19-11-2021 17:14:52 -- [erica]: was denied permission to: readConfig
-19-11-2021 17:14:52 -- [erica]: was denied permission to: restart
-19-11-2021 17:14:52 -- [erica]: was denied permission to: stop
-19-11-2021 17:14:53 -- [fred]: logged in successfully
-19-11-2021 17:14:53 -- [fred]: was denied permission to: start
-19-11-2021 17:14:53 -- [fred]: was denied permission to: topQueue
-19-11-2021 17:14:53 -- [fred]: was denied permission to: readConfig
-19-11-2021 17:14:53 -- [fred]: was denied permission to: setConfig
-19-11-2021 17:14:53 -- [fred]: was denied permission to: readConfig
-19-11-2021 17:14:53 -- [fred]: was denied permission to: restart
-19-11-2021 17:14:54 -- [george]: logged in successfully
-19-11-2021 17:14:54 -- [george]: was denied permission to: start
-19-11-2021 17:14:54 -- [george]: was denied permission to: topQueue
-19-11-2021 17:14:54 -- [george]: was denied permission to: readConfig
-19-11-2021 17:14:54 -- [george]: was denied permission to: setConfig
-19-11-2021 17:14:54 -- [george]: was denied permission to: readConfig
-19-11-2021 17:14:54 -- [george]: was denied permission to: restart
-19-11-2021 17:14:54 -- [george]: was denied permission to: stop
-19-11-2021 17:14:55 -- [server]: created user: henry
-19-11-2021 17:14:55 -- [server]: created user: ida
+19-11-2021 20:04:56 -- [bob]: logged in successfully
+19-11-2021 20:04:56 -- [server]: starting..
+19-11-2021 20:04:56 -- [bob]: was denied permission to: print
+19-11-2021 20:04:56 -- [bob]: was denied permission to: print
+19-11-2021 20:04:56 -- [bob]: was denied permission to: print
+19-11-2021 20:04:56 -- [bob]: was denied permission to: print
+19-11-2021 20:04:56 -- [bob]: was denied permission to: queue
+19-11-2021 20:04:56 -- [bob]: was denied permission to: topQueue
+19-11-2021 20:04:56 -- [bob]: was denied permission to: queue
+19-11-2021 20:04:56 -- [bob]: reading server config
+19-11-2021 20:04:56 -- [bob]: sets lockout time to: 2
+19-11-2021 20:04:56 -- [bob]: reading server config
+19-11-2021 20:04:56 -- [bob]: was denied permission to: queue
+19-11-2021 20:04:56 -- [server]: restarting..
+19-11-2021 20:04:56 -- [server]: stopping..
+19-11-2021 20:04:56 -- [server]: starting..
+19-11-2021 20:04:56 -- [server]: stopping..
+19-11-2021 20:04:57 -- [alice]: logged in successfully
+19-11-2021 20:04:57 -- [server]: starting..
+19-11-2021 20:04:57 -- [alice]: Queue for printer: office
+19-11-2021 20:04:57 -- [alice]: Queue for printer: office
+19-11-2021 20:04:57 -- [Server]: Moving job[3] to top.
+19-11-2021 20:04:57 -- [Server]: Moving job[3] to top.
+19-11-2021 20:04:57 -- [alice]: Queue for printer: office
+19-11-2021 20:04:57 -- [alice]: Queue for printer: office
+19-11-2021 20:04:57 -- [alice]: reading server config
+19-11-2021 20:04:57 -- [alice]: sets lockout time to: 2
+19-11-2021 20:04:57 -- [alice]: reading server config
+19-11-2021 20:04:57 -- [alice]: Queue for printer: office
+19-11-2021 20:04:57 -- [alice]: Queue for printer: office
+19-11-2021 20:04:57 -- [server]: restarting..
+19-11-2021 20:04:57 -- [server]: stopping..
+19-11-2021 20:04:57 -- [server]: starting..
+19-11-2021 20:04:58 -- [cecilia]: logged in successfully
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: start
+19-11-2021 20:04:58 -- [cecilia]: Queue for printer: office
+19-11-2021 20:04:58 -- [Server]: Moving job[3] to top.
+19-11-2021 20:04:58 -- [cecilia]: Queue for printer: office
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: readConfig
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: setConfig
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: readConfig
+19-11-2021 20:04:58 -- [cecilia]: Queue for printer: office
+19-11-2021 20:04:58 -- [server]: restarting..
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: stop
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: start
+19-11-2021 20:04:58 -- [cecilia]: was denied permission to: stop
+19-11-2021 20:04:59 -- [david]: logged in successfully
+19-11-2021 20:04:59 -- [david]: was denied permission to: start
+19-11-2021 20:04:59 -- [david]: was denied permission to: topQueue
+19-11-2021 20:04:59 -- [david]: was denied permission to: readConfig
+19-11-2021 20:04:59 -- [david]: was denied permission to: setConfig
+19-11-2021 20:04:59 -- [david]: was denied permission to: readConfig
+19-11-2021 20:04:59 -- [david]: was denied permission to: restart
+19-11-2021 20:04:59 -- [david]: was denied permission to: stop
+19-11-2021 20:05:00 -- [erica]: logged in successfully
+19-11-2021 20:05:00 -- [erica]: was denied permission to: start
+19-11-2021 20:05:00 -- [erica]: was denied permission to: topQueue
+19-11-2021 20:05:00 -- [erica]: was denied permission to: readConfig
+19-11-2021 20:05:00 -- [erica]: was denied permission to: setConfig
+19-11-2021 20:05:00 -- [erica]: was denied permission to: readConfig
+19-11-2021 20:05:00 -- [erica]: was denied permission to: restart
+19-11-2021 20:05:00 -- [erica]: was denied permission to: stop
+19-11-2021 20:05:01 -- [fred]: logged in successfully
+19-11-2021 20:05:01 -- [fred]: was denied permission to: start
+19-11-2021 20:05:01 -- [fred]: was denied permission to: topQueue
+19-11-2021 20:05:01 -- [fred]: was denied permission to: readConfig
+19-11-2021 20:05:01 -- [fred]: was denied permission to: setConfig
+19-11-2021 20:05:01 -- [fred]: was denied permission to: readConfig
+19-11-2021 20:05:01 -- [fred]: was denied permission to: restart
+19-11-2021 20:05:02 -- [george]: logged in successfully
+19-11-2021 20:05:02 -- [george]: was denied permission to: start
+19-11-2021 20:05:02 -- [george]: was denied permission to: topQueue
+19-11-2021 20:05:02 -- [george]: was denied permission to: readConfig
+19-11-2021 20:05:02 -- [george]: was denied permission to: setConfig
+19-11-2021 20:05:02 -- [george]: was denied permission to: readConfig
+19-11-2021 20:05:02 -- [george]: was denied permission to: restart
+19-11-2021 20:05:02 -- [george]: was denied permission to: stop

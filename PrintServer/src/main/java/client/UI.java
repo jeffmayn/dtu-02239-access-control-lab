@@ -169,10 +169,16 @@ public class UI {
 	}
 	
 
-	public boolean initialOptions(Scanner input) {
-		 System.out.println("Press (1) for automated tests\nPress (2) for manuel");	 
-		 String choice = input.nextLine();
-		 return choice.equals("1");
+	public String initialOptions(Scanner input) {
+		System.out.println("Press (1) for automated tests\nPress (2) for printing database\nPress (3) for resetting database");
+		String i = "";
+		while (!input.hasNext("exit")) {
+			
+			i = input.nextLine();			
+			return i;
+		}
+		return i;
+		 
 	}
 	
 	

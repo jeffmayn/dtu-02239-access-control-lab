@@ -106,10 +106,15 @@ public class Database {
 	public void initialiseDatabase() {
 		try {
 			
-			  File file = new File ("jdbc:sqlite:database\\database.db");
+			  File file = new File ("database\\database.db");
 
 			  if(file.exists()) {
+				  c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 			     } else {
+			    	 System.out.println("Database does not exists. See Database.java line 115");
+			    	 // if database file does not exists, uncomment this to create a new database 
+			    	 //
+			    	 /*
 			    	 c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 
 			    	 if(tableExists("users")){
@@ -127,15 +132,17 @@ public class Database {
 																	+ "readConfig boolean(0,1), "
 																	+ "setConfig boolean(0,1)"
 																	+ ")");
+							// populates the database									
 							dummyData();
 			    		}	
+			    	 */
 			     }
 		} catch ( Exception e ) {
 			System.err.println("[Server]: " + e.getClass().getName() + " --> " + e.getMessage() );
 			System.exit(0);
 		}
 	}
-
+	
 	public void disconnect() {
 		try {
 			c.close();
