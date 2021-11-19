@@ -237,4 +237,8 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 		
 	}
 
+	public void assignRolestoUser(String uid, String[] roles) throws RemoteException {
+		db.assignRoleToUser(uid, roles, session, log);
+	}
+
 }

@@ -263,6 +263,7 @@ public class Client {
 							// delete Bob
 							System.out.println("Retiring Bob..");
 							service.deleteUser("bob");
+							assignUserRoles(service, "george", "service-tech");
 							service.logout();
 							
 							// timeout the session for George
@@ -278,6 +279,8 @@ public class Client {
 							System.out.println("loggin in as Henry");
 							System.out.println(service.authenticateUser("henry", "password22"));		
 							service.start();
+							System.out.println("Henry tries to privilege escalates his access rights..");
+							assignUserRoles(service, "henry", "manager"); // henry tries to privilege escalates his access rights
 							System.out.println(service.status("office"));
 							service.print("text1.txt","office");
 							service.print("text2.txt","office");
@@ -340,6 +343,18 @@ public class Client {
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void assignUserRoles(PrinterService service, String uid, String roles) {
+		
+		String[] listRoles = roles.split("\\s*,\\s*");
+		
+		try {
+			service.assignRolestoUser(uid, listRoles);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void createNewUser(PrinterService service, String name, String password, String salt, String roles) {

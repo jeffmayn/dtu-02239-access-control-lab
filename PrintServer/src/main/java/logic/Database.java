@@ -42,6 +42,54 @@ public class Database {
 		return "";
 	}
 	
+	
+	public void assignRoleToUser(String uid, String[] roles, Session session, Log log) {
+		
+		
+		boolean permission = getUserPermissions(session.uid, "admin");
+		
+		if(permission) {
+			String q1 = "select * from users where user = ?";
+			ResultSet permissionsInfo1 = getQueryResult(q1, uid);
+			String userRoles = getStringFromResultSet(permissionsInfo1, "roles");
+			
+			String[] userRolesFromDB = userRoles.split("\\s*,\\s*");
+			
+			final String SEPARATOR = ",";
+			StringBuilder roleBuilder = new StringBuilder();
+			
+			roleBuilder.append(userRoles);
+			roleBuilder.append(SEPARATOR);
+
+			for(String roleDB : userRolesFromDB) {
+				for(String assigningRole : roles) {
+					if(!assigningRole.equals(roleDB)) {	
+						
+						roleBuilder.append(assigningRole);
+						roleBuilder.append(SEPARATOR);	
+						
+					} else {
+						System.out.print(uid + " already has " + roleDB + "-rights!");
+					}			
+				}
+			}
+			sqlStatement("update users set roles = '" + roleBuilder + "' where user = '" + uid + "'");	
+			try {
+				log.writeLogEntry("[server]: user " + uid + " has been granted the roles: " + roleBuilder, path + "server.log");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("<" + session.uid + " is not allowed to grant roles to users>");
+			try {
+				log.writeLogEntry("[server]: user " + session.uid + " has been denied granting roles to: " + uid, path + "server.log");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
 	public boolean getUserPermissions(String user, String permissionRequest) {
 		
 		boolean hasPermission = false;
@@ -103,6 +151,7 @@ public class Database {
 		}
 		
 	}
+
 	
 	public void createNewUser(String uid, String password, String salt, String[] roles, Session session, Log log) {
 		

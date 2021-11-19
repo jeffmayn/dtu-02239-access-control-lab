@@ -32,5 +32,7 @@ public interface PrinterService extends Remote {
 	
 	void deleteUser(String uid) throws RemoteException;
 	
+	void assignRolestoUser(String uid, String[] roles) throws RemoteException;
+	
 
 }
