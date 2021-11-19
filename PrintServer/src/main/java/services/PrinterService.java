@@ -26,8 +26,6 @@ public interface PrinterService extends Remote {
 	
 	void logout() throws RemoteException;
 	
-	void buildDatabase() throws RemoteException;
-	
 	void createNewUser(String uid, String password, String salt, String[] roles) throws RemoteException;
 	
 	void deleteUser(String uid) throws RemoteException;

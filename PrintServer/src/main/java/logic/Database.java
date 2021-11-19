@@ -214,11 +214,14 @@ public class Database {
 	public void initialiseDatabase() {
 		try {
 			
-			  File file = new File ("jdbc:sqlite:database\\database.db");
-
+			 File file = new File ("database\\database.db");
+			 
 			  if(file.exists()) {
-				  
+				  c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 			     } else {
+			    	 System.out.println("Database does not exists. See Database.java line 115");
+			    	 // if database file does not exists, uncomment this to create a new database 
+
 			    	 c = DriverManager.getConnection("jdbc:sqlite:database\\database.db");
 
 			    	 if(tableExists("users")){

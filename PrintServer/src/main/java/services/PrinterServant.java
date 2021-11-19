@@ -30,6 +30,7 @@ public class PrinterServant  extends UnicastRemoteObject implements PrinterServi
 
 	public PrinterServant() throws RemoteException {
 		super();
+		db.initialiseDatabase();
 	}
 
 	public void print(String filename, String printer) throws RemoteException {
